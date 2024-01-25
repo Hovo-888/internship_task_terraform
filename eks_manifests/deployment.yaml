@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: task-app-deployment
+  labels:
+    app: task-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task-app
+  template:
+    metadata:
+      labels:
+        app: task-app
+    spec:
+      containers:
+        - name: task-app-container
+          image: public.ecr.aws/398277651048/task_repo:latest
+          ports:
+            - containerPort: 80
