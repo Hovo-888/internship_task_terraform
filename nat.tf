@@ -1,11 +1,10 @@
-// Stexcuma elastic ip
 resource "aws_eip" "task_nat" {
   tags = {
     Name = var.nat_vars.nat_name
   }
 }
 
-// Stexcuma gateway VPC i hamar
+
 resource "aws_nat_gateway" "task_nat" {
   allocation_id = aws_eip.task_nat.id
   subnet_id     = aws_subnet.task_public_subnet_1.id
@@ -15,7 +14,7 @@ resource "aws_nat_gateway" "task_nat" {
   }
 }
 
-// Stexcuma route table VPC i hamar
+
 resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.task-vpc.id
 
@@ -29,7 +28,7 @@ resource "aws_route_table" "private_route_table" {
   }
 }
 
-// Miacnuma subnety route table in
+
 resource "aws_route_table_association" "task_private_route_table_assoc" {
   subnet_id      = aws_subnet.task_private_subnet.id
   route_table_id = aws_route_table.private_route_table.id
