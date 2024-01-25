@@ -6,7 +6,7 @@ data "aws_caller_identity" "current" {}
 
 
 terraform {
-  # http provider
+  
   required_providers {
     http = {
       source  = "hashicorp/http"
