@@ -1,4 +1,3 @@
-// Stexcuma Load Balancer Application tipi
 resource "aws_lb" "task_alb" {
   name               = var.elb_vars.elb_name
   internal           = false
@@ -13,7 +12,7 @@ resource "aws_lb" "task_alb" {
   }
 }
 
-// Load balanceri ashxatelu hamar petqa target group
+
 resource "aws_lb_target_group" "task_target_group" {
   name     = var.elb_vars.target_group_name
   port     = 80
@@ -47,7 +46,7 @@ resource "aws_lb_listener" "task_listener" {
   }
 }
 
-// Kpcnuma load balancery serverin
+
 resource "aws_lb_target_group_attachment" "web_target_attach" {
   target_group_arn = aws_lb_target_group.task_target_group.arn
   target_id        = aws_instance.task_server.id
