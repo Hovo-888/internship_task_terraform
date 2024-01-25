@@ -1,4 +1,3 @@
-// Elastic Container Registry sarqeluc heto mer web appy conteinrize enq anum sarqumenq image ev pushum ECR
 resource "null_resource" "push_docker_image" {
 
   triggers = {
