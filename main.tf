@@ -1,4 +1,3 @@
-// Stexcuma AWS i EC2 server
 resource "aws_instance" "task_server" {
   ami                    = var.ami.task-server-ami
   instance_type          = var.instance_type
