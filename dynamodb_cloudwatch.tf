@@ -1,4 +1,3 @@
-//Stexcuma AWS CloudWatch DynamoDB i hamar DB i mej grelu mec arjeq unenalu depqum log anelu hamar
 resource "aws_cloudwatch_metric_alarm" "high_read_capacity" {
   alarm_name          = var.dynamodb_read_cloudwatch_vars.read_alarm_name
   comparison_operator = var.dynamodb_read_cloudwatch_vars.read_comparison_operator
@@ -22,7 +21,7 @@ resource "aws_cloudwatch_metric_alarm" "high_read_capacity" {
   }
 }
 
-//Stexcuma AWS CloudWatch DynamoDB i hamar DB ic kardalu mec arjeq unenalu depqum log anelu hamar
+
 resource "aws_cloudwatch_metric_alarm" "high_write_capacity" {
   alarm_name          = var.dynamodb_write_cloudwatch_vars.write_alarm_name
   comparison_operator = var.dynamodb_write_cloudwatch_vars.write_comparison_operator
