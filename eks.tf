@@ -1,4 +1,3 @@
-// Stexcuma AWS Kubernetes cluster
 resource "aws_eks_cluster" "eks_cluster" {
   name     = var.eks_vars.name
   role_arn = aws_iam_role.cluster_role.arn
@@ -11,7 +10,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   }
 }
 
-// Stexcuma Kubernetes noderi group
+
 resource "aws_eks_node_group" "node_group" {
   cluster_name    = aws_eks_cluster.eks_cluster.name
   node_group_name = var.eks_vars.node_group_name
@@ -30,7 +29,7 @@ resource "aws_eks_node_group" "node_group" {
   instance_types = ["t3.medium"]
 }
 
-// Kubernetsi clusteri stexcumic heto apply a linum manifestnery(deployment, service, hpa)
+
 resource "null_resource" "eks_manifests_deployment" {
 
   triggers = {
