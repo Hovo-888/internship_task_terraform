@@ -1,5 +1,3 @@
-// Ays faylum gtnvumen bolor popoxakannery
-
 variable "ami" {
   type = map(any)
   default = {
