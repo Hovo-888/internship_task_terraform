@@ -1,4 +1,3 @@
-// Stexcuma AWS CloudWatch
 resource "aws_cloudwatch_metric_alarm" "high_cpu_utilization" {
   alarm_name          = var.ec2_cloudwatch_vars.alarm_name
   comparison_operator = var.ec2_cloudwatch_vars.comparison_operator_name
