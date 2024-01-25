@@ -1,5 +1,6 @@
 .terraform/
 .vscode/
+.idea/
 keys/
 *.tfstate
 *.tfstate.backup
