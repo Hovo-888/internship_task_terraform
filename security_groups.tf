@@ -11,7 +11,7 @@ resource "aws_security_group" "server-sg" {
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "tcp"
+    protocol    = "ssh"
     cidr_blocks = [format("%s/32", jsondecode(data.http.ipinfo.response_body).ip)] //SSH mer ip ic
   }
 
