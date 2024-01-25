@@ -1,4 +1,4 @@
-# yntrumenq base imagey
+
 FROM nginx:latest
 
 # talisenq ashxatanqayn directory n
