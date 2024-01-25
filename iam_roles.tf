@@ -1,4 +1,3 @@
-//CloudWatch role EC2 i hamar vor CloudWatch karoxana log anel EC2 y
 resource "aws_iam_role" "ec2_cloudwatch_logs_role" {
   name = var.iam_user_vars.ec2_cloudwatch_role_name
 
@@ -16,7 +15,7 @@ resource "aws_iam_role" "ec2_cloudwatch_logs_role" {
   })
 }
 
-//CloudWatch policy EC2 i hamar
+
 resource "aws_iam_policy" "ec2_cloudwatch_logs_policy" {
   name        = var.iam_user_vars.ec2_cloudwatch_policy_name
   description = var.iam_user_vars.ec2_cloudwatch_policy_desc
@@ -38,7 +37,7 @@ resource "aws_iam_policy" "ec2_cloudwatch_logs_policy" {
   })
 }
 
-// Kubernetes clusteri role
+
 resource "aws_iam_role" "cluster_role" {
   name = "eks-cluster-role"
 
@@ -54,7 +53,7 @@ resource "aws_iam_role" "cluster_role" {
   })
 }
 
-// Kubernetes clusteri attachment
+
 resource "aws_iam_role" "node_role" {
   name = "eks-node-role"
 
@@ -70,7 +69,7 @@ resource "aws_iam_role" "node_role" {
   })
 }
 
-// Sranic nerqevi kodery miacunma rolery policinerin
+
 
 resource "aws_iam_role_policy_attachment" "node-AmazonEKSWorkerNodePolicy" {
   role       = aws_iam_role.node_role.name
