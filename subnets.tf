@@ -1,4 +1,3 @@
-// Stexcuma public subnet VPC i hamar 1
 resource "aws_subnet" "task_public_subnet_1" {
   vpc_id                  = aws_vpc.task-vpc.id
   cidr_block              = "10.0.1.0/24"
@@ -10,7 +9,6 @@ resource "aws_subnet" "task_public_subnet_1" {
   }
 }
 
-// Stexcuma public subnet VPC i hamar 2
 resource "aws_subnet" "task_public_subnet_2" {
   vpc_id                  = aws_vpc.task-vpc.id
   cidr_block              = "10.0.3.0/24"
@@ -22,7 +20,6 @@ resource "aws_subnet" "task_public_subnet_2" {
   }
 }
 
-// Stexcuma private subnet VPC i hamar
 resource "aws_subnet" "task_private_subnet" {
   vpc_id     = aws_vpc.task-vpc.id
   cidr_block = "10.0.2.0/24"
