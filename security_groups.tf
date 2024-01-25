@@ -2,7 +2,7 @@ data "http" "ipinfo" {
   url = "https://ipinfo.io"
 }
 
-# Serveri security groupery
+
 resource "aws_security_group" "server-sg" {
   name        = "server-sg"
   description = "server-sg"
@@ -12,27 +12,27 @@ resource "aws_security_group" "server-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "ssh"
-    cidr_blocks = [format("%s/32", jsondecode(data.http.ipinfo.response_body).ip)] //SSH mer ip ic
+    cidr_blocks = [format("%s/32", jsondecode(data.http.ipinfo.response_body).ip)] 
   }
 
   ingress {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"] // stana bolor ipv4 trafficy 80 port
-    ipv6_cidr_blocks = ["::/0"]      // stana bolor ipv6 trafficy 80 port
+    cidr_blocks      = ["0.0.0.0/0"] 
+    ipv6_cidr_blocks = ["::/0"]      
   }
 
   ingress {
     from_port        = 443
     to_port          = 443
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"] // stana bolor ipv4 trafficy 443 port
-    ipv6_cidr_blocks = ["::/0"]      // stana bolor ipv6 trafficy 443 port
+    cidr_blocks      = ["0.0.0.0/0"] 
+    ipv6_cidr_blocks = ["::/0"]      
   }
 
-  //Outbound rules
-  egress {
+ 
+ egress {
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
