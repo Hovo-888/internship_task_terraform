@@ -1,4 +1,3 @@
-// Stexcuma DynamoDB-n
 resource "aws_dynamodb_table" "task_dynamodb_table" {
   name           = var.dynamo_db_vars.table_name
   billing_mode   = "PROVISIONED"
@@ -44,7 +43,7 @@ resource "aws_dynamodb_table" "task_dynamodb_table" {
   }
 }
 
-// Dynamodb i stexcumic heto ashxatacnuma dynamodb_data.py file y vor data avelacni DB i mej
+
 resource "null_resource" "dynamodb_fill_data" {
 
   triggers = {
