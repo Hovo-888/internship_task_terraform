@@ -19,3 +19,4 @@ spec:
           image: public.ecr.aws/398277651048/task_repo:latest
           ports:
             - containerPort: 80
+            
