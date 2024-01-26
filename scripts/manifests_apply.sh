@@ -14,3 +14,4 @@ aws eks --region $AWS_REGION update-kubeconfig --name $CLUSTER_NAME
 kubectl apply -f $DEPLOYMENT_FILE
 kubectl apply -f $SERVICE_FILE
 kubectl apply -f $HPA_FILE
+
